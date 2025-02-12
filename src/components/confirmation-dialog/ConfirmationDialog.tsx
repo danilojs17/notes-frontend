@@ -32,7 +32,7 @@ export function ConfirmationDialog({
           </Button>
           <Button onClick={onConfirm} disabled={isLoading}>
             {isLoading ? <Loader2 className="animate-spin" /> : null}
-            Guardar
+            Aceptar
           </Button>
         </div>
       </DialogContent>

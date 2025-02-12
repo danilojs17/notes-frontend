@@ -1,4 +1,5 @@
 "use client";
+
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -32,19 +33,15 @@ export function NoteForm({ handleSubmit, note }: Readonly<NoteFormProps>) {
 
   return (
     <Form {...form}>
-      <form id="note-form" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form id="note-form" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Título</FormLabel>
+              <FormLabel className="font-semibold">Título</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="Ingresa el título de la nota"
-                  className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400"
-                  {...field}
-                />
+                <Input placeholder="Ingresa el título de la nota" {...field} />
               </FormControl>
               <FormMessage className="text-red-400" />
             </FormItem>
@@ -55,13 +52,9 @@ export function NoteForm({ handleSubmit, note }: Readonly<NoteFormProps>) {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Descripción</FormLabel>
+              <FormLabel className="font-semibold">Descripción</FormLabel>
               <FormControl>
-                <Textarea
-                  placeholder="Escribe el contenido de tu nota"
-                  className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 min-h-[200px]"
-                  {...field}
-                />
+                <Textarea placeholder="Escribe el contenido de tu nota" {...field} />
               </FormControl>
               <FormMessage className="text-red-400" />
             </FormItem>

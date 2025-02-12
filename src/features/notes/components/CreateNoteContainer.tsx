@@ -23,7 +23,7 @@ export function CreateNoteContainer() {
   };
 
   return (
-    <Card className="w-full max-w-lg mx-auto p-4 sm:p-6 md:p-8">
+    <Card className="w-full max-w-lg mx-auto">
       <CardHeader>
         <CardTitle>Crear una nota</CardTitle>
         <CardDescription>Así de facil es llenar una nota, digilencia los siguientes campos.</CardDescription>

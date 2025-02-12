@@ -14,6 +14,7 @@ import { initialStateConfirmationDialog } from "@/model/confirmation-dialog.type
 import useDeleteNote from "../hooks/useDeleteNote";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { NoteCero } from "./NoteCero";
 
 dayjs.locale("es");
 
@@ -24,7 +25,7 @@ export function NoteContainer() {
   const { mutateAsync: deleteNote, isPending: isLoading } = useDeleteNote();
   const router = useRouter();
   const [filterValue, setFilterValue] = useState("");
-  const { data: notes = [], isFetching: isLoadingNotes } = useGetAllNotes(filterValue);
+  const { data: notes = [], isFetching: isLoadingNotes, isSuccess } = useGetAllNotes(filterValue);
 
   const onClose = () => {
     dispatch({ type: NotesActionReducer.ConfirmationDialog, payload: initialStateConfirmationDialog });
@@ -49,12 +50,9 @@ export function NoteContainer() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-2">
       <div className="max-w-4xl mx-auto flex flex-col gap-2">
-        <div
-          className="flex w-full flex-row-reverse
-         justify-end"
-        >
+        <div className="flex justify-end">
           <Button onClick={() => router.push("/notes/new")}>
             <Plus className="w-4 h-4 mr-2" />
             Nueva Nota
@@ -64,11 +62,11 @@ export function NoteContainer() {
           <Input
             type="text"
             value={filterValue}
-            placeholder="Buscar por..."
+            placeholder="Buscar por título"
             onChange={(e) => setFilterValue(e.target.value)}
           />
         </div>
-        <SkeletonNote />
+        {notes.length === 0 && !isLoadingNotes && isSuccess && <NoteCero />}
         {isLoadingNotes && loadingNotes.map((loadingNote) => <SkeletonNote key={loadingNote} />)}
         {!isLoadingNotes && notes.map((note) => <Note key={note.id} {...note} deleteNote={handleDeleteNote} />)}
       </div>

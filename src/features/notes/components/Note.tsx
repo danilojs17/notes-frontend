@@ -32,7 +32,7 @@ export function Note({ content, createdAt, title, updatedAt, id, deleteNote }: R
         </div>
         <CardDescription className="text-muted-foreground">{content}</CardDescription>
       </CardHeader>
-      <CardFooter className="flex gap-2 text-sm text-muted-foreground">
+      <CardFooter className="flex flex-col items-start gap-2 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <Calendar className="w-4 h-4" />
           <span>Creación: {dayjs(createdAt).format("MMMM D, YYYY")}</span>
