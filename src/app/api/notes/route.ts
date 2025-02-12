@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { addDoc, collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../firestore";
 import { FirebaseError } from "firebase/app";
 import { CreateNote, Notes } from "@/features/notes/models/note.type";
@@ -27,17 +27,6 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
   }
-}
-
-export async function GET_BY_ID(id: string): Promise<Notes | undefined> {
-  const noteRef = doc(db, "notes", id);
-  const note = await getDoc(noteRef);
-
-  if (!note.exists()) {
-    return;
-  }
-
-  return { id: note.id, ...note.data() } as Notes;
 }
 
 export async function POST(request: Request) {
