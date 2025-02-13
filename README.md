@@ -1,37 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Notas
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Notas es una aplicación web desarrollada con React y Next.js que permite gestionar notas utilizando una base de datos en firestore. La aplicación permite listar notas, crear, editar y eliminar notas, mostrando notificaciones para cada acción realizada.
+
+## Características
+
+- **Listado de notas**: Visualización de notas en una lista de tarjetas.
+- **Crear notas**: Formulario para crear nuevas notas.
+- **Editar notas**: Modificar las notas existentes.
+- **Eliminar notas**: Eliminar notas con confirmación mediante un modal.
+- **Notificaciones modales**: Mensajes informativos sobre las acciones realizadas (crear, editar, eliminar).
+
+## Despliegue
+
+Puedes visitar la aplicación desplegada en el siguiente enlace:
+
+[Visitar Notas](https://notes-frontend-gray.vercel.app/)
+
+## Autor
+
+- **Danilo Amaris** - [GitHub](https://github.com/danilojs17)
+
+## Instalación
+
+### Prerrequisitos
+
+- Node.js >= 18.x.x
+- Yarn, npm o pnpm
+
+### Pasos de instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/danilojs17/notes-frontend.git
+   ```
+2. Accede al directorio del proyecto:
+
+   ```bash
+   cd notes-frontend
+   ```
+
+3. Instala las dependencias. Puedes usar pnpm, npm o yarn:
+
+Si usas pnpm
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Si usas npm
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O si prefieres yarn
 
-## Learn More
+```bash
+yarn install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Crea un archivo .env con las variables de entorno necesarias, basándote en un archivo de ejemplo template.env
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Inicia el servidor de desarrollo:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm run dev
+# O con npm
+npm run dev
+# O con yarn
+yarn dev
+```
 
-## Deploy on Vercel
+6. Ejecución de Pruebas
+   Para ejecutar las pruebas, utiliza el siguiente comando:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm run test
+# O con npm
+npm run test
+# O con yarn
+yarn test
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# notes-frontend" 
+7. Abre el navegador y accede a http://localhost:3000 para ver la aplicación en funcionamiento.
+
+## Tecnologías
+
+- [React.js](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Shadcn/ui](https://ui.shadcn.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Axios](https://axios-http.com/)
+- [Firestore](https://firebase.google.com/docs/firestore?hl=es-419)
+
+## Referencias
+
+- [Documentación oficial de React](https://react.dev/reference/react)
+- [Documentación oficial de Next.js](https://nextjs.org/docs)
+- [Shadcn/ui](https://ui.shadcn.com/)
+- [Documentación de Axios](https://axios-http.com/docs/intro)
+- [Documentación de React Hook Form](https://react-hook-form.com/get-started)
+- [TanStack Query](https://tanstack.com/query)
